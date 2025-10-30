@@ -19,7 +19,7 @@ public class ScoreFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_score, container, false);
         scoreNumber = view.findViewById(R.id.score_number);
 
-        //NEW: Set initial score
+        //set the initial score
         Bundle args = getArguments();
         if (args != null) {
             int initialScore = args.getInt("score", 0);
@@ -29,7 +29,7 @@ public class ScoreFragment extends Fragment {
         return view;
     }
 
-    //NEW: Update score dynamically
+    //update the score
     public void updateScore(int newScore) {
         if (scoreNumber != null) {
             scoreNumber.setText(String.valueOf(newScore));

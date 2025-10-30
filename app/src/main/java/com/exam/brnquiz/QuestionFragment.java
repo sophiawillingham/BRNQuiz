@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Random;
 
 public class QuestionFragment extends Fragment {
 
@@ -18,9 +19,10 @@ public class QuestionFragment extends Fragment {
     private Button submitButton;
     private int selectedPosition = -1;
 
-    //NEW: Example question and 6 options
-    private String question = "Which planet is known as the Red Planet?";
-    private String[] answers = {"Earth", "Venus", "Mars", "Jupiter", "Saturn", "Mercury"};
+    //example question and 6 options
+    private String question = "What is the capital of Colombia?";
+    private String[] answers = {"Medellin", "Madrid", "Bogota", "Washington DC", "What is Colombia", "None of the above"};
+
 
     public QuestionFragment() { }
 
@@ -35,30 +37,30 @@ public class QuestionFragment extends Fragment {
         listView = view.findViewById(R.id.answers_list);
         submitButton = view.findViewById(R.id.submit_button);
 
-        //NEW: Setup ListView with single choice
+        //ListView with single choice
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_single_choice, answers);
         listView.setAdapter(adapter);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        //NEW: Listen for selection
+        //listens for selection
         listView.setOnItemClickListener((parent, v, position, id) -> selectedPosition = position);
 
-        //NEW: Submit button checks answer
+        //checks answer
         submitButton.setOnClickListener(v -> {
             if (selectedPosition == -1) {
-                Toast.makeText(getContext(), "Please select an answer", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "please select an answer", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            if (selectedPosition == 2) { // correct answer index = 2 ("Mars")
+            if (selectedPosition == 2) { // correct answer index = 2 (bogota)
                 ((QuizActivity) getActivity()).increaseScore();
-                Toast.makeText(getContext(), "Correct!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "yay!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getContext(), "Wrong!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Wrong! Use your BRN(AI)", Toast.LENGTH_SHORT).show();
             }
 
-            //NEW: Optional - disable selection after submitting
+            //EC: disable selection after submitting
             submitButton.setEnabled(false);
         });
 

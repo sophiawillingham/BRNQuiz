@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".QuizActivity">
 
-    <!-- NEW: Container for the score fragment (top) -->
+    <!-- container for the score fragment -->
     <FrameLayout
         android:id="@+id/scoreFrag"
         android:layout_width="0dp"
@@ -19,7 +19,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="16dp"/>
 
-    <!-- NEW: Container for the question fragment (takes remaining space) -->
+    <!-- container for the question fragment -->
     <FrameLayout
         android:id="@+id/quizFrag"
         android:layout_width="0dp"

@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class QuizActivity extends AppCompatActivity {
 
-    //NEW: Track correct answers
+    //Score to track the correct answers
     int score = 0;
 
     @Override
@@ -15,14 +15,14 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        //NEW: Load ScoreFragment and QuestionFragment
+        //Load scoreFragment and questionFragment
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
         ScoreFragment scoreFragment = new ScoreFragment();
         QuestionFragment questionFragment = new QuestionFragment();
 
-        //NEW: Pass initial score to ScoreFragment
+        //Pass the initial score to scoreFragment
         Bundle scoreBundle = new Bundle();
         scoreBundle.putInt("score", score);
         scoreFragment.setArguments(scoreBundle);
@@ -32,7 +32,7 @@ public class QuizActivity extends AppCompatActivity {
         ft.commit();
     }
 
-    //NEW: Method called from QuestionFragment to increment score
+    //method called from questionFragment to increment score
     public void increaseScore() {
         score++;
         ScoreFragment scoreFrag = (ScoreFragment) getSupportFragmentManager().findFragmentById(R.id.scoreFrag);
