@@ -17,7 +17,7 @@
           android:layout_marginStart="5dp"
           android:layout_weight="1"
           android:text="Score:"
-          android:textColor="#FF6F00FE"
+          android:textColor="@color/score_text_color"
           android:textSize="20sp"
           android:textStyle="bold" />
 
@@ -28,7 +28,7 @@
           android:layout_marginStart="5dp"
           android:layout_weight="1"
           android:text="300"
-          android:textColor="#FF6F00FE"
+          android:textColor="@color/test_color_color"
           android:textSize="20sp"
           android:textStyle="bold" />
 
