@@ -1,5 +1,6 @@
 package com.exam.brnquiz;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -37,6 +38,14 @@ public class QuestionFragment extends Fragment {
 
         listView = view.findViewById(R.id.answers_list);
         submitButton = view.findViewById(R.id.submit_button);
+
+        //make submit button a random color each time
+        Random random = new Random();
+        int red = random.nextInt(100);
+        int green = random.nextInt(100);
+        int blue = random.nextInt(100);
+        int randomColor = Color.rgb(red, green, blue);
+        submitButton.setBackgroundColor(randomColor);
 
         //ListView with single choice
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
