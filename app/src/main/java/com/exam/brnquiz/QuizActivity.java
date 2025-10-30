@@ -15,14 +15,14 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        //Load scoreFragment and questionFragment
+        //load scoreFragment and questionFragment
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
         ScoreFragment scoreFragment = new ScoreFragment();
         QuestionFragment questionFragment = new QuestionFragment();
 
-        //Pass the initial score to scoreFragment
+        //pass the initial score
         Bundle scoreBundle = new Bundle();
         scoreBundle.putInt("score", score);
         scoreFragment.setArguments(scoreBundle);

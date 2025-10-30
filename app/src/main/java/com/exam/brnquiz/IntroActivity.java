@@ -1,8 +1,8 @@
 package com.exam.brnquiz;
 
-import android.content.Intent; //NEW: allows starting another activity
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button; //NEW: for accessing the Begin button
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
