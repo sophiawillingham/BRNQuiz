@@ -27,4 +27,15 @@ If you fork the starter repository you will be unable to push your changes and u
 
 ## 🧠 Need Help?
 
-If you have any issues, reach out to your instructor before test day.
+If you have any issues , reach out to your instructor before test day.
+
+
+if you want to change the text of the multiple chocie answers and the answers you should:
+
+In QuestionFragment.java
+//NEW: Example question and 6 options
+private String question = "Which planet is known as the Red Planet?";
+private String[] answers = {"Earth", "Venus", "Mars", "Jupiter", "Saturn", "Mercury"};
+
+Just replace the string in question:
+private String question = "What is the capital of France?";
